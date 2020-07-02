@@ -11,12 +11,12 @@ The following is a [React native](https://reactnative.dev/) app with [Pixabay](h
 
 ## Demo:
 
-<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/Readme/homescreen.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/demo/homescreen.jpg?raw=true" width=400 alt="Demo screen">
 
-<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/Readme/catScreen.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/demo/catScreen.jpg?raw=true" width=400 alt="Demo screen">
 
-<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/Readme/selectedCatScreen.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/demo/selectedCatScreen.jpg?raw=true" width=400 alt="Demo screen">
 
-<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/Readme/seachResults.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/demo/seachResults.jpg?raw=true" width=400 alt="Demo screen">
 
-<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/Readme/viewingimage.jpg?raw=true" width=400 alt="Demo screen">
+<img src="https://github.com/claykabongok/Picture_app_react_native/blob/master/demo/viewingimage.jpg?raw=true" width=400 alt="Demo screen">
