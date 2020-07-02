@@ -1,19 +1,21 @@
+import { Ionicons } from "@expo/vector-icons";
 import * as WebBrowser from "expo-web-browser";
 import * as React from "react";
-
 import axios from "axios";
-
 import {
   Image,
+  StatusBar,
   Platform,
+  Button,
   StyleSheet,
   View,
   FlatList,
+  Text,
   ActivityIndicator,
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { RectButton, ScrollView } from "react-native-gesture-handler";
 
 import { MonoText } from "../components/StyledText";
 import ViewImage from "../screens/ViewImage";
@@ -22,8 +24,9 @@ const numCol = 3;
 const { width, height } = Dimensions.get("window");
 
 const equalWidth = width / numCol;
-
-export default function HomeScreen({ navigation }) {
+export default function LinksScreen({ route, navigation }) {
+  const { category } = route.params;
+  navigation.setOptions({ title: "Category: " + category });
   const [loading, setloading] = React.useState(true);
   const [pictures, setPictures] = React.useState([]);
 
@@ -34,7 +37,7 @@ export default function HomeScreen({ navigation }) {
 
     axios({
       method: "GET",
-      url: `${api}?key=${key}&image_type=photo&per_page=40`,
+      url: `${api}?key=${key}&image_type=photo&category=${category}&per_page=40`,
     })
       .then((res) => {
         setPictures(res.data.hits);
@@ -46,7 +49,7 @@ export default function HomeScreen({ navigation }) {
       })
       .finally(() => setloading(false));
   }, []);
-  const pictures_render_item = ({ item }) => {
+  const pictures_render_item = ({ item, index }) => {
     return (
       <TouchableOpacity
         onPress={() =>
@@ -62,7 +65,6 @@ export default function HomeScreen({ navigation }) {
     );
   };
 
-
   return (
     <View style={styles.container}>
       {loading ? (
@@ -71,18 +73,13 @@ export default function HomeScreen({ navigation }) {
         <FlatList
           data={pictures}
           renderItem={pictures_render_item}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item, index) => index.toString()}
           numColumns={numCol}
         />
       )}
     </View>
   );
 }
-// }
-
-HomeScreen.navigationOptions = {
-  header: null,
-};
 
 const styles = StyleSheet.create({
   container: {
